@@ -53,6 +53,8 @@ while True:
     if choice == '1':
         user_sum = input('Укажите сумму пополнения счета, разделитель - точка: ')
         try:
+            if float(user_sum) <= 0:
+                raise Exception("Введено не корректное значение")
             account += float(user_sum)
         except:
             print("Указана не корректная сумма пополнения счета")
@@ -60,6 +62,8 @@ while True:
     elif choice == '2':
         pay_sum = input('Укажите сумму предполагаемой покупки, разделитель - точка: ')
         try:
+            if float(pay_sum) <= 0:
+                raise Exception("Введено не корректное значение")
             pay_sum = float(pay_sum)
         except:
             print("Указана не корректная сумма предполагаемой покупки")
